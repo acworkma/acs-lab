@@ -5,15 +5,22 @@ import os
 def main():
     try:
         load_dotenv()
+
         connection_string_email = os.getenv("CONNECTION_STRING_EMAIL")
         if not connection_string_email:
             raise ValueError("CONNECTION_STRING_EMAIL not found in environment variables.")
+        sender_address = os.getenv("SENDER_ADDRESS")
+        if not sender_address:
+            raise ValueError("SENDER_ADDRESS not found in environment variables.")
+        recipient_address = os.getenv("RECIPIENT_ADDRESS")
+        if not recipient_address:
+            raise ValueError("RECIPIENT_ADDRESS not found in environment variables.")
         client = EmailClient.from_connection_string(connection_string_email)
 
         message = {
-            "senderAddress": "DoNotReply@e1267993-ef04-4b33-99d6-046370f5db15.azurecomm.net",
+            "senderAddress": sender_address,
             "recipients": {
-                "to": [{"address": "admin@MngEnvMCAP818246.onmicrosoft.com"}]
+                "to": [{"address": recipient_address}]
             },
             "content": {
                 "subject": "Test Email",
