@@ -1,0 +1,6 @@
+# Project dependencies for acs-lab
+python-dotenv
+msal
+requests
+azure-communication-email
+azure-communication-sms
