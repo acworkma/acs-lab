@@ -12,9 +12,9 @@ Files
 
 Prerequisites
 1. Python 3.8+ in your environment.
-2. An Azure subscription and an Azure AD tenant.
+2. An Azure subscription and an EntraID tenant.
 3. An Azure Communication Service resource for Email and SMS (if you want to run those samples).
-4. A Microsoft Entra (Azure AD) app registration for Graph access (for Teams messaging).
+4. An EntraID app registration for Microsoft Graph access (for Teams messaging).
 
 Install dependencies
 
@@ -55,9 +55,9 @@ TEAMS_DEFAULT_MESSAGE="Hello from ACS Lab"
 
 Important: never commit `.env` or secrets to source control. Add `.env` to `.gitignore`.
 
-Azure AD app registration and Graph permissions (executed during the session)
+EntraID app registration and Graph permissions (executed during the session)
 
-1. Create an app registration at `Azure Active Directory > App registrations > New registration`.
+1. Create an app registration at `EntraID > App registrations > New registration`.
 2. Note the **Application (client) ID** and **Directory (tenant) ID** — copy into `.env`.
 3. Under **Certificates & secrets** create a **Client secret** and copy the *value* into `.env` (only shown once).
 4. Under **API permissions** add Microsoft Graph permissions:
